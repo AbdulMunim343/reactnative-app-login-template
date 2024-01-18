@@ -4,15 +4,15 @@ import { theme } from '../core/theme'
 
 export default function Background({ children }) {
   return (
-    <ImageBackground
-      source={require('../assets/background_dot.png')}
-      resizeMode="repeat"
-      style={styles.background}
-    >
+    // <ImageBackground
+    //   source={require('../assets/background_dot.png')}
+    //   resizeMode="repeat"
+    //   style={styles.background}
+    // >
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         {children}
       </KeyboardAvoidingView>
-    </ImageBackground>
+    //</ImageBackground>
   )
 }
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     width: '100%',
-    maxWidth: 340,
+    //maxWidth: 340,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
