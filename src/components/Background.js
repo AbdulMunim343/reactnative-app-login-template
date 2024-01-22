@@ -1,18 +1,16 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { ImageBackground, StyleSheet, KeyboardAvoidingView,View } from 'react-native'
 import { theme } from '../core/theme'
 
 export default function Background({ children }) {
   return (
-    // <ImageBackground
-    //   source={require('../assets/background_dot.png')}
-    //   resizeMode="repeat"
-    //   style={styles.background}
-    // >
+     <View
+      style={styles.background}
+    >
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         {children}
       </KeyboardAvoidingView>
-    //</ImageBackground>
+    </View>
   )
 }
 
@@ -24,9 +22,9 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
     width: '100%',
-    //maxWidth: 340,
+    maxWidth: 340,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
