@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Card, Text, Appbar } from 'react-native-paper';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Card, Text, Appbar, Icon } from 'react-native-paper';
 import axiosConfig from '../configs/axiosConfig';
 
 
@@ -26,15 +26,23 @@ export default function Dashboard({ navigation }) {
         <Appbar.Content title="Dashboard" />
       </Appbar.Header>
       <View style={styles.container}>
-        {data.map((res) => {
-            return(
-              <Card style={styles.list}>
-              <Card.Content>
-                <Text variant="titleMedium">{res.name}</Text>
-              </Card.Content>
-            </Card>
+        <ScrollView>
+          {data.map((res, i) => {
+            return (
+
+              <Card style={styles.list} key={i}>
+                <Card.Content style={styles.cardCon}>
+                  <Text variant="titleMedium">{res.name}</Text>
+                  <TouchableOpacity>
+                    <Icon source="chevron-right" size={25}></Icon>
+                  </TouchableOpacity>
+
+                </Card.Content>
+              </Card>
+
             )
-        })}
+          })}
+        </ScrollView>
       </View>
     </>
   )
@@ -47,7 +55,14 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 
-  list:{
-    marginBottom:10
+  list: {
+    marginBottom: 10
+  },
+
+  cardCon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%'
   }
 })
