@@ -23,7 +23,7 @@ export default function Dashboard({ navigation }) {
   return (
     <>
       <Appbar.Header>
-        <Appbar.Content title="Dashboard" />
+        <Appbar.Content title="Persons" />
       </Appbar.Header>
       <View style={styles.container}>
         <ScrollView>
@@ -36,7 +36,6 @@ export default function Dashboard({ navigation }) {
                   <TouchableOpacity>
                     <Icon source="chevron-right" size={25}></Icon>
                   </TouchableOpacity>
-
                 </Card.Content>
               </Card>
 
