@@ -28,7 +28,7 @@ export default function Person({navigation }) {
           <ScrollView>
                 <Card style={styles.list}>
                   <Card.Content style={styles.cardCon}>
-
+      
                   </Card.Content>
                 </Card>
           </ScrollView>
