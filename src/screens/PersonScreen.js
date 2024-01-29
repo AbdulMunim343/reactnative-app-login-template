@@ -4,20 +4,20 @@ import { Card, Text, Appbar, Icon } from 'react-native-paper';
 import axiosConfig from '../configs/axiosConfig';
 
 
-export default function Person({navigation }) {
+export default function PersonScreens({navigation }) {
     const [person, setPerson] = useState([])
     useEffect(() => {
-      getData();
+      //getData();
     }, [])
   
-    const getData = () => {
-      axiosConfig.get(`/users/${itemId}`).then((res) => {
-        console.log(res);
-       // setData(res.data)
-      }).catch((error) => {
-        console.log(error)
-      })
-    }
+    // const getData = () => {
+    //   axiosConfig.get(`/users/${itemId}`).then((res) => {
+    //     console.log(res);
+    //    // setData(res.data)
+    //   }).catch((error) => {
+    //     console.log(error)
+    //   })
+    //}
   
     return (
       <>

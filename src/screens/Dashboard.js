@@ -33,7 +33,7 @@ export default function Dashboard({ navigation }) {
               <Card style={styles.list} key={i}>
                 <Card.Content style={styles.cardCon}>
                   <Text variant="titleMedium">{res.name}</Text>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={()=>navigation.navigate('PersonScreen')}>
                     <Icon source="chevron-right" size={25}></Icon>
                   </TouchableOpacity>
                 </Card.Content>
