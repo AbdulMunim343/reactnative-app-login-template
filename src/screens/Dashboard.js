@@ -25,24 +25,23 @@ export default function Dashboard({ navigation }) {
       <Appbar.Header>
         <Appbar.Content title="Persons" />
       </Appbar.Header>
-      <View style={styles.container}>
+      
         <ScrollView>
+        <View style={styles.container}>
           {data.map((res, i) => {
             return (
-
               <Card style={styles.list} key={i}>
                 <Card.Content style={styles.cardCon}>
                   <Text variant="titleMedium">{res.name}</Text>
-                  <TouchableOpacity onPress={()=>navigation.navigate('PersonScreen')}>
+                  <TouchableOpacity onPress={()=>navigation.navigate('PersonScreen',{Id:res.id})}>
                     <Icon source="chevron-right" size={25}></Icon>
                   </TouchableOpacity>
                 </Card.Content>
               </Card>
-
             )
           })}
+          </View>
         </ScrollView>
-      </View>
     </>
   )
 }
@@ -50,7 +49,7 @@ export default function Dashboard({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
+    padding: 10,
     width: '100%',
   },
 
