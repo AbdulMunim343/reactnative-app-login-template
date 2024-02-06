@@ -23,6 +23,7 @@ export default function ListScreen({ navigation }) {
   return (
     <>
       <Appbar.Header>
+      <Appbar.BackAction onPress={() => navigation.goBack()} />
         <Appbar.Content title="Persons" />
       </Appbar.Header>
       

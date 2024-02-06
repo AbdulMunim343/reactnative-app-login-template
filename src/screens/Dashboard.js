@@ -22,14 +22,14 @@ const [data, setData] = useState([
         <View style={styles.container}>
       {data.map((res,i)=>{
         return(
-          <Card style={styles.cardCon}>
-                <Card.Content>
-                  <TouchableOpacity>
+          <Card style={styles.cardCon} key={i}>
+                <Card.Content style={styles.content}>
+                  <TouchableOpacity style={styles.content} onPress={()=>navigation.navigate('ListScreen')}>
                     <Icon source={res.icon} size={70}></Icon>
+                    <Text variant="titleLarge">{res.name}</Text>
                   </TouchableOpacity>
-                  <Text variant="titleLarge">{res.name}</Text>
                 </Card.Content>
-              </Card>   
+            </Card>   
         ) 
       })}
                          
@@ -49,7 +49,9 @@ const styles = StyleSheet.create({
   content: {
     display:'flex',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    height:'100%',
+    width:'100%'
   },
 
   cardCon: {
@@ -59,7 +61,6 @@ const styles = StyleSheet.create({
     marginHorizontal: '1%',
     marginBottom: 6,
     minWidth: '45%',
-    textAlign: 'center',
     height: 210
-  }
+  },
 })
